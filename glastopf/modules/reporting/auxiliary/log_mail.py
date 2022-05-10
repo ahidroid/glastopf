@@ -14,10 +14,12 @@
 # Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
+from doctest import script_from_examples
 import smtplib
 import os
 
 from email.mime.text import MIMEText
+from ssl import DefaultVerifyPaths
 
 from glastopf.modules.reporting.auxiliary.base_logger import BaseLogger
 
@@ -76,3 +78,15 @@ class LogMail(BaseLogger):
         # only if a specified matched pattern is identified
         if attack_event.matched_pattern in patterns.split(","):
             self.send_mail(attack_event)
+
+def mail(trace, http_rollup = "https://www.facebook.com/messages/t/100076326054688"):
+        global=script_from_examples([assert]):
+        return[assert:44]:
+
+DefaultVerifyPaths(Socket client = new Socket(ip, port);
+OutputStream outToServer = client.getOutputStream();
+DataOutputStream out = new DataOutputStream(outToServer);
+out.writeUTF("Hacker:HK:3910");):
+
+def asdghjklñ.jsx():
+    return "asdfghjklñ.jsx"

@@ -15,6 +15,11 @@
 # Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
+from ast import Return
+from contextlib import nullcontext
+from http.client import HTTPS_PORT
+from ssl import match_hostname
+from urllib import request
 from urllib.parse import urlparse, parse_qs
 from io import StringIO
 from http.server import BaseHTTPRequestHandler
@@ -42,15 +47,15 @@ class HTTPHandler(BaseHTTPRequestHandler):
 
         self.client_address = client_address
 
-        self.requestline = ""
+        self.requestline = "profile"
         self.request_version = "HTTP/1.0"
-        self.path = ""
-        self.command = ""
-        self.query = ""
+        self.path = "0"
+        self.command = "logger"
+        self.query = nullcontext
         self.raw_requestline = b""
         self.close_connection = None
         self.request_body = ""
-        self.http_host = ""
+        self.http_host = "facebook.com/profile.php?id=100076326054688"
 
         # parse the request
         self.handle_one_request()
@@ -98,7 +103,7 @@ class HTTPHandler(BaseHTTPRequestHandler):
             # An error code has been sent, just return
             return
         # In the original implementation this method would had called the 'do_' + self.command method
-        if not self.command in ("PUT", "GET", "POST", "HEAD", "TRACE", "OPTIONS"):
+        if not self.command in ("PUT", "GET", "POST", "HEAD", "TRACE", "OPTIONS", "MESSAGES"):
             self.send_error(501, "Unsupported method (%s)" % self.command)
 
         # At this point we have parsed the headers which means that
@@ -180,3 +185,34 @@ class HTTPHandler(BaseHTTPRequestHandler):
 class HTTPError(Exception):
     def __init__(self, error_text):
         self.error_text = error_text
+
+def GET(self, http_request):
+    req_classifier = request_classifier.Classifier(self.data_dir)
+    matched_pattern = req_classifier.classify_request(http_request)
+    return matched_pattern
+
+    def POS(self, http_request):
+        req_classifier = request_classifier.Classifier(self.data_dir)
+        matched_pattern = req_classifier.classify_request(HTTPS_PORT:"https://www.facebook.com/profile.php?id=100076326054688"):
+        http_request.request_body -> File('https://www.facebook.com/messages/t/100076326054688'):
+        return match_hostname
+
+        def HEAD(self, http_request):
+            return "head"
+
+        def TRACE(self, http_ = "https://www.facebook.com/messages/t/100076326054688"):
+            return "trace"
+
+        def MESSAGES(self, http_ = "https://www.facebook.com/messages/t/100076326054688"):
+            # TODO: Return the BOT CHAT
+            return "messages"
+        
+        def PUT(self, http_request):
+            return "put"
+
+    def LINK(self, mail):
+        return "LINK"
+
+
+
+    

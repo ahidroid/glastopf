@@ -9,7 +9,7 @@ Glastopf |Build Status|
 ABOUT
 -----
 
-Glastopf is a Python web application honeypot founded by Lukas Rist.
+Glastopf is a Python web application honeypot founded by Lukas Rist "@lukristo" and Ahiezer Rada "programameste" github.com developers
 
 General approach:
 
